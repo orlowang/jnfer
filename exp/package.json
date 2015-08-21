@@ -1,0 +1,30 @@
+{
+  "name": "jnfer-example",
+  "author": {
+    "name": "Ive Wang"
+  },
+  "version": "0.0.1-alpha.1",
+  "description": "Sample project that uses jnfer",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivewong/jnfer.git"
+  },
+  "dependencies": {
+    "react": ">=0.13"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browser-sync": "^1.8.1",
+    "browserify": "^7.0.3",
+    "gulp": "^3.0.1",
+    "gulp-notify": "^2.1.0",
+    "gulp-util": "^3.0.1",
+    "pretty-hrtime": "^0.2.2",
+    "underscore": "^1.7.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.2.1"
+  }
+}
