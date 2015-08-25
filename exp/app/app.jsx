@@ -1,9 +1,6 @@
-(function() {
-	import React from "react";
-	import exp from "./components/exp";
+import React from "react";
+import Article from "../../lib/Article";
 
-	window.React = React;
+window.React = React;
 
-	React.render(<exp/>, document.body);
-
-})()
+React.render(<Article />, document.body);

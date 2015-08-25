@@ -2,7 +2,7 @@ var config = {
 	global: {
 		isWatching: true
 	},
-	browerSync: {
+	browserSync: {
 		server: {
 			baseDir: ['./build', './app']
 		},
@@ -20,7 +20,7 @@ var config = {
 		src: './'
 	},
 	markup: {
-		src: './app',
+		src: './app/**',
 		build: './build'
 	}
 };
@@ -51,7 +51,7 @@ gulp.task('browserify', function(callback){
 					notify.onError({
 						title: "Compile Error",
 						message: "<%= error.message %>"
-					}).apply(this.args);
+					}).apply(this, args);
 
 					this.emit('end');
 				})
@@ -84,16 +84,16 @@ gulp.task('browserify', function(callback){
 
 gulp.task('build', ['browserify', 'markup']);
 
-gulp.task('browser', ['build'], function(){
-	browerSync(config.browerSync);
+gulp.task('browserSync', ['build'], function(){
+	browserSync(config.browserSync);
 })
 
 gulp.task('markup', function() {
 	return gulp.src(config.markup.src)
-		.pie(gulp.dest(config.markup.build));
+		.pipe(gulp.dest(config.markup.build));
 })
 
-gulp.task('watch', ['browerSync'], function(){
+gulp.task('watch', ['browserSync'], function(){
 	gulp.watch(config.markup.src, ['markup']);
 })
 
