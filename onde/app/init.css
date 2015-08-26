@@ -1,0 +1,11 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;background-color:transparent;font-family:tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;}
+html{font-size:10px}html,body{width:100%;height:100%}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}
+blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+input,textarea{outline:0}.JNF-no-select{user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none}.JNF-can-select{user-select:auto;-moz-user-select:auto;-webkit-user-select:auto;-ms-user-select:auto}
+.JNF-fl{float:left}.JNF-fr{float:right}.JNF-fixed{position:fixed}.JNF-relative{position:relative}.JNF-absolute{position:absolute}.clv{clear:both}.JNF-Clear::after{clear:both;display:block;content:""}
+i[data-icon]:before {content: attr(data-icon);speak: none;font-weight: normal;font-variant: normal;text-transform: none;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+
+
+
+body{font-size: 1.4rem;}
+.card{width: 10rem;box-shadow: 0 0 3px rgba(0,0,0,.5);margin: 8rem auto 0;border-radius: 4px;padding: 2rem;cursor: pointer;}
