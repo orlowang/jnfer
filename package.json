@@ -10,7 +10,7 @@
     "test": "echo \"No test implemented\" && exit 0",
     "prebuild": "rm -rf lib",
     "eslint": "gulp eslint",
-    "build": "npm run eslint && babel --stage 1 ./src --out-dir ./lib",
+    "build": "npm run eslint && babel --stage 0 --plugins object-assign ./src --out-dir ./lib",
     "prepublish": "npm run build"
   },
   "keywords": [
@@ -28,12 +28,13 @@
     "url": "https://github.com/ivewong/jnfer/issues",
     "email": "ivework@outlook.com"
   },
-  "homepage": "http://jnfer.com/",
+  "homepage": "http://jnfer.yaozong.wang/",
   "dependencies": {
     "react": ">=0.13"
   },
   "devDependencies": {
     "babel": "^5.4.3",
+    "babel-core": "^5.8.22",
     "babel-eslint": "^3.1.17",
     "eslint": "^0.23.0",
     "eslint-plugin-react": "^2.5.2",
@@ -41,6 +42,7 @@
     "gulp-eslint": "^0.15.0",
     "react": ">=0.13",
     "react-router": "^0.13.3",
-    "react-tap-event-plugin": "^0.1.6"
+    "react-tap-event-plugin": "^0.1.6",
+    "babel-plugin-object-assign": "^1.2.1"
   }
 }
