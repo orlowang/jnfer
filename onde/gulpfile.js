@@ -11,7 +11,7 @@ var config = {
 	browserify: {
 		debug: true,
 		bundleConfig: [{
-			entries: './app/app.jsx',
+			entries: './app/src/app.jsx',
 			dest: './build',
 			outputName: 'app.js'
 		}]
@@ -20,7 +20,7 @@ var config = {
 		src: './'
 	},
 	markup: {
-		src: './app/**',
+		src: './app/uf/**',
 		build: './build'
 	}
 };
@@ -60,7 +60,10 @@ gulp.task('browserify', function(callback){
 				.on('end', reportFinished);
 		};
 
-		bundler.transform(babelify);
+		bundler.transform(babelify.configure({
+			stage: 1,
+			plugins: ['object-assign']
+		}));
 
 		if (config.global.isWatching) {
 			bundler = watchify(bundler);

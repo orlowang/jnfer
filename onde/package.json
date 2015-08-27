@@ -25,6 +25,7 @@
     "pretty-hrtime": "^0.2.2",
     "underscore": "^1.7.0",
     "vinyl-source-stream": "^1.0.0",
-    "watchify": "^2.2.1"
+    "watchify": "^2.2.1",
+    "babel-plugin-object-assign": "^1.2.1"
   }
 }

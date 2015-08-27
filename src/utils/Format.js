@@ -7,6 +7,7 @@
  */
 let format = {
 	Px8: 8,
+	Px12: 12,
 
 	NoUserSelect: {
 		'WebkitUserSelect': 'none',
