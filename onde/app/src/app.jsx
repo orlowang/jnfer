@@ -5,12 +5,13 @@ import ResourceLoader from "../../../lib/utils/ResourceLoader";
 import PanelLeft from "./layout/PanelLeft.jsx";
 import HandleArea from "./layout/HandleArea.jsx";
 
-var USERHEAD = {
-	title: 'Auto Design',
-	bodyClass: 'onde'
+var USERSET = {
+	title: ['title', 'innertext::Auto Design'],
+	bodyClass: 'onde',
+	css: ['./ConsoleLike.css'],
+	charset: ['meta', 'charset::utf-8'],
+	ieDoc: ['meta', 'http-equiv::X-UA-Compatible', 'content::IE=edge']
 };
-
-var RESOURCE = ['./init.css'];
 
 function rednerHead(arg) {
 	let ARG = arg || {};
@@ -34,6 +35,8 @@ function rednerHead(arg) {
 	_HEAD.appendChild(_CHARSET);
 	_HEAD.appendChild(_IEMODEL);
 	_HEAD.appendChild(_INITCSS);
+
+	ResourceLoader.link(USERSET.css);
 };
 
 let Body = React.createClass({
@@ -44,7 +47,7 @@ let Body = React.createClass({
 			height: '100%'
 		};
 		return (
-			<div className={USERHEAD.bodyClass} style={styles}>
+			<div className={USERSET.bodyClass} style={styles}>
 				<PanelLeft></PanelLeft>
 				<HandleArea></HandleArea>
 			</div>
@@ -53,7 +56,8 @@ let Body = React.createClass({
 });
 // window.React = React;
 
-rednerHead(USERHEAD);
-ResourceLoader.loadCSS(RESOURCE);
+ResourceLoader.load([USERSET.title, USERSET.charset, USERSET.ieDoc])
+ResourceLoader.style([ResetStyle + UserCSS]);
+ResourceLoader.link(USERSET.css);
 
 React.render(<Body />, document.body);
