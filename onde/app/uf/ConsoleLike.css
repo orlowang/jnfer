@@ -1,1 +1,19 @@
 .panelLeft{border-right-color: #aaaaab;background-color: #dfdfdf;}
+.mouseMenu, .mouseMenu .mMTitle{border-color: #aaaaab;}
+
+/*
+ * PanelArea组件
+ * 
+ * 自有样式
+ *   @title-left:   标题居左;
+ *   @title-right:  标题居右;
+ *   @title-middle: 标题居中;
+ *   @single:       单标题样式;
+ *   @simple:       扁平线框样式;
+ *   @rich:         富线框样式;
+ */
+.panelArea{}
+.panelArea.title-left{text-align: left;}
+.panelArea.title-middle{text-align: center;}
+.panelArea.title-right{text-align: right;}
+.panelArea.single .pA-title{border-top: 1px solid #aaaaab;}

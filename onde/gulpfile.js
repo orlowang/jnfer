@@ -61,7 +61,7 @@ gulp.task('browserify', function(callback){
 		};
 
 		bundler.transform(babelify.configure({
-			stage: 1,
+			stage: 0,
 			plugins: ['object-assign']
 		}));
 

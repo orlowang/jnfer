@@ -1,7 +1,6 @@
 import React from 'react';
 import Format from '../../../../lib/utils/Format';
 import MouseMenu from '../../../../lib/MouseMenu';
-import Article from '../../../../lib/Article';
 
 let HandleArea = React.createClass({
 	render(){
