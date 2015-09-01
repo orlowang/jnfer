@@ -23,13 +23,15 @@ export default class PanelArea extends Component {
 			},
 			pATText: {
 				position: 'relative',
-				top: '-.5em'
+				top: '-.5em',
+				paddingLeft: 5,
+				paddingRight: 5
 			},
 			pAContainer: {}
 		};
 
 		return (
-			<div className={`panelArea ${this.props.panelType}`} style={Object.assign(styles.panelArea, Format.NoUserSelect)}>
+			<div {...this.props} className={`panelArea ${this.props.panelType}`} style={Object.assign(styles.panelArea, Format.NoUserSelect)}>
 				<div className="pA-title" style={styles.pATitle}>
 					<span className="pA-t-text" style={styles.pATText}>{this.props.panelTitleText}</span>
 				</div>

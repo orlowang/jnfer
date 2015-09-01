@@ -1,11 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Format from '../../../../lib/utils/Format';
 import PanelArea from '../../../../lib/PanelArea';
-
-let PanelLeft = React.createClass({
-	showContextMenu(){
-
-	},
+export default class PanelLeft extends Component{
+	_console(){
+		console.log(this.props);
+	}
 	render(){
 		let styles = {
 			position: 'absolute',
@@ -19,11 +18,9 @@ let PanelLeft = React.createClass({
 		};
 		Object.assign(styles, Format.NoUserSelect);
 		return (
-			<div className="panelLeft" onContextMenu={this.showContextMenu} style={styles}>
-				<PanelArea></PanelArea>
+			<div className="panelLeft" onClick={this._console} onContextMenu={this.showContextMenu} style={styles}>
+				<PanelArea panelType="simple"></PanelArea>
 			</div>
 		);
 	}
-});
-
-export default PanelLeft;
+}

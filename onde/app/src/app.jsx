@@ -54,10 +54,10 @@ let Body = React.createClass({
 		)
 	}
 });
-// window.React = React;
 
 ResourceLoader.load([USERSET.title, USERSET.charset, USERSET.ieDoc])
 ResourceLoader.style([ResetStyle + UserCSS]);
 ResourceLoader.link(USERSET.css);
 
+window.React = React;
 React.render(<Body />, document.body);
