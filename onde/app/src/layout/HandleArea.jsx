@@ -20,7 +20,11 @@ let HandleArea = React.createClass({
 				<MouseMenu title="Title" titlePosition="center">
 					<div>this is a panel</div>
 				</MouseMenu>
-				<TitleLike leftElement=""></TitleLike>
+				<TitleLike>
+					<div layoutPosition="left">i'm A</div>
+					<div layoutPosition="center">i'm B</div>
+					<div layoutPosition="right">i'm C</div>
+				</TitleLike>
 			</div>
 		);
 	}

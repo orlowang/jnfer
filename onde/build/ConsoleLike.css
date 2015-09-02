@@ -12,12 +12,15 @@
  *   @simple:       扁平线框样式;
  *   @rich:         富线框样式;
  */
-.panelArea{}
+.panelArea{margin: 10px;}
 .panelArea.title-left{text-align: left;}
 .panelArea.title-middle{text-align: center;}
 .panelArea.title-right{text-align: right;}
 .panelArea .pA-title .pA-t-text{background-color: #dfdfdf;margin-left: 10px;}
+.panelArea .pA-container{padding: 10px;}
 
 .panelArea.single .pA-title{border-top: 1px solid #aaaaab;}
 
-.panelArea.simple .pA-title{border-width: 1px 1px 0;border-style: solid;border-color: #aaaaab;}
+.panelArea.simple .pA-title{border-width: 1px 1px 0;border-radius: 4px 4px 0 0;}
+.panelArea.simple .pA-container{border-width: 0 1px 1px;border-radius: 0 0 4px 4px;padding: 10px;}
+.panelArea.simple .pA-title, .panelArea.simple .pA-container{border-style: solid;border-color: #aaaaab;}

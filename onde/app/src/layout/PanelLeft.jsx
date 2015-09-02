@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import Format from '../../../../lib/utils/Format';
 import PanelArea from '../../../../lib/PanelArea';
 export default class PanelLeft extends Component{
-	_console(){
-		console.log(this.props);
-	}
 	render(){
 		let styles = {
 			position: 'absolute',
@@ -18,7 +15,7 @@ export default class PanelLeft extends Component{
 		};
 		Object.assign(styles, Format.NoUserSelect);
 		return (
-			<div className="panelLeft" onClick={this._console} onContextMenu={this.showContextMenu} style={styles}>
+			<div className="panelLeft" onContextMenu={this.showContextMenu} style={styles}>
 				<PanelArea panelType="simple"></PanelArea>
 			</div>
 		);
