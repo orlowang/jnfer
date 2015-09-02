@@ -11,6 +11,7 @@ let format = {
 
 	NoUserSelect: {
 		'WebkitUserSelect': 'none',
+		'MsUserSelect': 'none',
 		'userSelect': 'none'
 	}
 };

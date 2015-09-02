@@ -1,37 +1,37 @@
 import React, {Component} from 'react';
+import Wrapper from '../utils/Wrapper';
 
 export default class TitleLike extends Component{
 	static propTypes = {
-		leftElement: React.PropTypes.object,
-		centerElement: React.PropTypes.object,
-		rightElement: React.PropTypes.object
+		centerWidth: React.PropTypes.string
 	};
 	static defaultProps = {
-		leftElementType: 'div',
-		centerElementType: 'div',
-		rightElementType: 'div'
+		centerWidth: '75%'
 	};
 	render(){
 		let {
-			leftElement,
-			leftElementType,
-			centerElement,
-			centerElementType,
-			rightElement,
-			rightElementType,
+			centerWidth,
 			...other
 		} = this.props;
+		let styles = {
+			wrapper: {
+				position: 'relative'
+			},
+			afterStyle: {
+				clear: 'both'
+			}
+		};
+		let CHILDREN = React.Children.map(this.props.children, (child) => {
+      if (child.props.layoutPosition == 'left'){return React.cloneElement(child, {style: {position: 'absolute', left: 0}});}
+      if (child.props.layoutPosition == 'right'){return React.cloneElement(child, {style: {position: 'absolute', right: 0}});}
+      if (child.props.layoutPosition == 'center'){return React.createElement('div', {style: {maxWidth: `${this.props.centerWidth}`, float: 'left', marginLeft: '50%'}}, React.createElement('div', {style: {'marginLeft': '-50%', width: '100%'}}, child));}
+    });
 
-		let LEFTELEMENT, CENTERELEMENT, RIGHTELEMENT, CHILDREN;
+		let props = other;
+    props.style = this.props.style;
 
-		if (this.props.leftElement) LEFTELEMENT =
-			React.createElement(this.props.leftElementType);
-		if (this.props.createElement) CENTERELEMENT =
-			React.createElement(this.props.centerElementType);
-		if (this.props.rightElement) RIGHTELEMENT =
-			React.createElement(this.props.rightElementType);
-		CHILDREN = [LEFTELEMENT, CENTERELEMENT, RIGHTELEMENT];
-
-		return CHILDREN;
+		return (
+			<Wrapper style={styles.wrapper} afterStyle={styles.afterStyle}>{CHILDREN}</Wrapper>
+		);
 	}
 }
