@@ -26,21 +26,23 @@ export default class PanelLeft extends Component{
 				textOverflow: 'ellipsis',
 				display: 'block',
 				whiteSpace: 'nowrap'
+			},
+			mMContainer: {
+				borderTopWidth: 1,
+				borderTopStyle: 'solid',
+				margin: 0
 			}
 		};
 
 		Object.assign(styles, Format.NoUserSelect);
 
-		let CHILDREN = React.Children.map(this.props.children, (child) => {
-      return React.cloneElement(child, {className: "mMContainer", style: {borderTopWidth: 1, borderTopStyle: 'solid'}});
-    });
 		return (
 			<div className="mouseMenu" style={styles.mouseMenu}>
 				<TitleLike centerWidth="50%">
 					<span layoutPosition="center" style={styles.mMTitle}>{this.props.title}</span>
 					<div layoutPosition="right">Pin</div>
 				</TitleLike>
-				{CHILDREN}
+				<div className="mMContainer" style={styles.mMContainer}>{this.props.children}</div>
 			</div>
 		);
 	}

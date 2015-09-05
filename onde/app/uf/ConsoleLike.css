@@ -1,5 +1,6 @@
 .panelLeft{border-right-color: #aaaaab;background-color: #dfdfdf;}
 .mouseMenu, .mouseMenu .mMContainer{border-color: #aaaaab;}
+.mouseMenu{background-color: #f0f0f0;margin: 50px 0 0 50px;}
 
 /*
  * PanelArea组件
@@ -24,3 +25,11 @@
 .panelArea.simple .pA-title{border-width: 1px 1px 0;border-radius: 4px 4px 0 0;}
 .panelArea.simple .pA-container{border-width: 0 1px 1px;border-radius: 0 0 4px 4px;padding: 10px;}
 .panelArea.simple .pA-title, .panelArea.simple .pA-container{border-style: solid;border-color: #aaaaab;}
+
+/*
+ * Proplabel组件
+ * 
+ */
+.propLabel{margin: 4px;border-color: #aaaaab;border-radius: 3px;}
+.propLabel input[type="text"]{color: #fff;background-color: #aaaaab;border-left-color: #aaaaab;border-right-color: transparent;}
+.propLabel input[type="text"]:focus{background-color: #fff;color: #333;}

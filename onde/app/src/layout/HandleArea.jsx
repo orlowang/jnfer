@@ -1,6 +1,7 @@
 import React from 'react';
 import Format from '../../../../lib/utils/Format';
 import MouseMenu from '../../../../lib/MouseMenu';
+import ProplabelDropdown from '../../../../lib/ProplabelDropdown';
 import Wrapper from '../../../../lib/utils/Wrapper';
 import TitleLike from '../../../../lib/struct/TitleLike';
 
@@ -18,7 +19,7 @@ let HandleArea = React.createClass({
 		return (
 			<div className="handleArea" style={styles}>
 				<MouseMenu title="Title" titlePosition="center">
-					<div>this is a panel</div>
+					<ProplabelDropdown></ProplabelDropdown>
 				</MouseMenu>
 				<TitleLike>
 					<div layoutPosition="left">i'm A</div>
