@@ -1,6 +1,13 @@
+/*
+ * commont
+ */
+.propLabel{float: left;}
+.mouseMenu .mMContainer:after{content: '';display: block;clear: both;}
+
 .panelLeft{border-right-color: #aaaaab;background-color: #dfdfdf;}
 .mouseMenu, .mouseMenu .mMContainer{border-color: #aaaaab;}
 .mouseMenu{background-color: #f0f0f0;margin: 50px 0 0 50px;}
+.mouseMenu .mMContainer{padding: 4px;width: 318px;}
 
 /*
  * PanelArea组件
@@ -31,5 +38,6 @@
  * 
  */
 .propLabel{margin: 4px;border-color: #aaaaab;border-radius: 3px;}
-.propLabel input[type="text"]{color: #fff;background-color: #aaaaab;border-left-color: #aaaaab;border-right-color: transparent;}
+.propLabel>span{width: 90px;text-align: center;}
+.propLabel input[type="text"]{color: #fff;background-color: #aaaaab;border-left-color: #aaaaab;border-right-color: transparent;width: 45px;}
 .propLabel input[type="text"]:focus{background-color: #fff;color: #333;}

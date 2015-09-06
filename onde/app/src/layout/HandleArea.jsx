@@ -19,7 +19,10 @@ let HandleArea = React.createClass({
 		return (
 			<div className="handleArea" style={styles}>
 				<MouseMenu title="Title" titlePosition="center">
-					<ProplabelDropdown></ProplabelDropdown>
+					<ProplabelDropdown proplabelName="BorderWidth"></ProplabelDropdown>
+					<ProplabelDropdown proplabelName="BorderStyle"></ProplabelDropdown>
+					<ProplabelDropdown proplabelName="BorderColor"></ProplabelDropdown>
+					<ProplabelDropdown proplabelName="BorderRadius"></ProplabelDropdown>
 				</MouseMenu>
 				<TitleLike>
 					<div layoutPosition="left">i'm A</div>
