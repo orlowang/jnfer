@@ -5,6 +5,7 @@ export default class PanelLeft extends Component{
 	render(){
 		let styles = {
 			position: 'absolute',
+			overflow: 'hidden',
 			left: 0,
 			top: 0,
 			width: 320,
