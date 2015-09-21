@@ -1,6 +1,7 @@
 var config = {
 	global: {
-		isWatching: true
+		isWatching: true,
+		isMinifyCSS: false
 	},
 	browserSync: {
 		server: {
@@ -11,17 +12,18 @@ var config = {
 	browserify: {
 		debug: true,
 		bundleConfig: [{
-			entries: './app/src/app.jsx',
+			entries: './app/script/app.jsx',
 			dest: './build',
 			outputName: 'app.js'
 		}]
 	},
 	app: {
-		src: './'
+		src: './app/**',
+		build: './build'
 	},
 	markup: {
-		src: './app/uf/**',
-		build: './build'
+		web: './app/web/**',
+		style: './app/style/**/*.less'
 	}
 };
 var gulp = require('gulp');
@@ -31,6 +33,9 @@ var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var babelify = require('babelify');
 var notify = require('gulp-notify');
+var less = require('gulp-less');
+var path = require('path');
+var minifyCSS = require('gulp-minify-css');
 
 gulp.task('browserify', function(callback){
 	var bundleQueue = config.browserify.bundleConfig.length;
@@ -85,19 +90,52 @@ gulp.task('browserify', function(callback){
 	config.browserify.bundleConfig.forEach(browserifyThis);
 })
 
-gulp.task('build', ['browserify', 'markup']);
+gulp.task('build', ['browserify', 'markup', 'lesstocss']);
 
 gulp.task('browserSync', ['build'], function(){
 	browserSync(config.browserSync);
 })
 
+gulp.task('lesstocss', function(){
+	if (config.global.isMinifyCSS) {
+		return gulp.src(config.markup.style)
+			.pipe(less())
+			.on('error', function(){
+						var args = Array.prototype.slice.call(arguments);
+
+						notify.onError({
+							title: "Compile Error",
+							message: "<%= error.message %>"
+						}).apply(this, args);
+
+						this.emit('end');
+					})
+			.pipe(minifyCSS())
+			.pipe(gulp.dest(config.app.build));
+	} else {
+		return gulp.src(config.markup.style)
+			.pipe(less())
+			.on('error', function(){
+						var args = Array.prototype.slice.call(arguments);
+
+						notify.onError({
+							title: "Compile Error",
+							message: "<%= error.message %>"
+						}).apply(this, args);
+
+						this.emit('end');
+					})
+			.pipe(gulp.dest(config.app.build));
+	}
+})
+
 gulp.task('markup', function() {
-	return gulp.src(config.markup.src)
-		.pipe(gulp.dest(config.markup.build));
+	return gulp.src(config.markup.web)
+		.pipe(gulp.dest(config.app.build));
 })
 
 gulp.task('watch', ['browserSync'], function(){
-	gulp.watch(config.markup.src, ['markup']);
+	gulp.watch(config.app.src, ['markup', 'lesstocss']);
 })
 
 gulp.task('default', ['watch']);

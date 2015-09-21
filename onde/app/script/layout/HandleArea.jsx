@@ -10,11 +10,12 @@ import FucNav from '../../../../lib/BusinessModule/Navigation/FucNav';
 let HandleArea = React.createClass({
 	render(){
 		let styles = {
-			position: 'absolute',
-			right: 0,
-			top: 0,
-			height: '100%',
-			width: 'calc( 100% - 320px )'
+			default: {
+				display: 'flex'
+			},
+			container: {
+				width: '100%'
+			}
 		};
 		let after = {clear: 'both'};
 		let data = [
@@ -74,24 +75,26 @@ let HandleArea = React.createClass({
 		];
 		Object.assign(styles, Format.NoUserSelect);
 		return (
-			<div className="handleArea" style={styles}>
-				<FucNav data={data}></FucNav>
-				<MouseMenu title="Title" titlePosition="center">
-					<ProplabelDropdown proplabelName="BorderWidth"></ProplabelDropdown>
-					<ProplabelDropdown proplabelName="BorderStyle"></ProplabelDropdown>
-					<ProplabelDropdown proplabelName="BorderColor"></ProplabelDropdown>
-					<ProplabelDropdown proplabelName="BorderRadius"></ProplabelDropdown>
-				</MouseMenu>
-				<TitleLike>
-					<div layoutPosition="left">i'm A</div>
-					<div layoutPosition="center">i'm B</div>
-					<div layoutPosition="right">i'm C</div>
-				</TitleLike>
-				<Grid unit={3} gap={0}>
-					<h2 width={2}>ok, this is 1</h2>
-					<h2 width={1}>ok, this is 2</h2>
-					<h2>ok, this is 3</h2>
-				</Grid>
+			<div className="handleArea" style={styles.default}>
+				<div className="hA-container" style={styles.container}>
+					<FucNav data={data}></FucNav>
+					<MouseMenu title="Title" titlePosition="center">
+						<ProplabelDropdown proplabelName="BorderWidth"></ProplabelDropdown>
+						<ProplabelDropdown proplabelName="BorderStyle"></ProplabelDropdown>
+						<ProplabelDropdown proplabelName="BorderColor"></ProplabelDropdown>
+						<ProplabelDropdown proplabelName="BorderRadius"></ProplabelDropdown>
+					</MouseMenu>
+					<TitleLike>
+						<div layoutPosition="left">i'm A</div>
+						<div layoutPosition="center">i'm B</div>
+						<div layoutPosition="right">i'm C</div>
+					</TitleLike>
+					<Grid unit={3} gap={0}>
+						<h2 width={2}>ok, this is 1</h2>
+						<h2 width={1}>ok, this is 2</h2>
+						<h2>ok, this is 3</h2>
+					</Grid>
+				</div>
 			</div>
 		);
 	}

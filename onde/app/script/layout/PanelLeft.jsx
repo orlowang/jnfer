@@ -6,11 +6,11 @@ import UserAction from './UserAction.jsx';
 export default class PanelLeft extends Component{
 	render(){
 		let styles = {
-			position: 'absolute',
 			overflow: 'hidden',
-			left: 0,
-			top: 0,
-			width: 320,
+			float: 'left',
+			minWidth: 260,
+			maxWidth: 340,
+			width: '20%',
 			height: '100%',
 			borderRightWidth: 1,
 			borderRightStyle: 'solid',

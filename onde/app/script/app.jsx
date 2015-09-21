@@ -8,7 +8,7 @@ import HandleArea from "./layout/HandleArea.jsx";
 var USERSET = {
 	title: ['title', 'innertext::Auto Design'],
 	bodyClass: 'onde',
-	css: ['./ConsoleLike.css'],
+	css: ['./style.css'],
 	charset: ['meta', 'charset::utf-8'],
 	ieDoc: ['meta', 'http-equiv::X-UA-Compatible', 'content::IE=edge']
 };
@@ -42,7 +42,6 @@ function rednerHead(arg) {
 let Body = React.createClass({
 	render(){
 		let styles = {
-			position: 'relative',
 			width: '100%',
 			height: '100%'
 		};
