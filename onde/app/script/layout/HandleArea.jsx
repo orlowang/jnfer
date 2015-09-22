@@ -3,6 +3,7 @@ import Format from '../../../../lib/utils/Format';
 import MouseMenu from '../../../../lib/MouseMenu';
 import ProplabelDropdown from '../../../../lib/ProplabelDropdown';
 import Wrapper from '../../../../lib/utils/Wrapper';
+import BrowserUA from '../../../../lib/utils/BrowserUA';
 import TitleLike from '../../../../lib/struct/TitleLike';
 import Grid from '../../../../lib/struct/Grid';
 import FucNav from '../../../../lib/BusinessModule/Navigation/FucNav';
@@ -11,7 +12,7 @@ let HandleArea = React.createClass({
 	render(){
 		let styles = {
 			default: {
-				display: 'flex'
+				display: `${BrowserUA.prefix}flex`
 			},
 			container: {
 				width: '100%'

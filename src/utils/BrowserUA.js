@@ -1,14 +1,14 @@
-let _UA = navigator.userAgent.toLowerCase();
+let _UA = window.navigator.userAgent.toLowerCase();
 let browser = {
 	name: '',
   kernel: '',
   version: '',
   platform: '',
-  vendorPrefix: ''
+  prefix: ''
 };
-if (_UA.indexOf('trident/') > -1 || _UA.indexOf('edge/') > -1) {browser.vendorPrefix = 'ms';}
-if (_UA.indexOf('presto/') > -1) {browser.vendorPrefix = 'o';}
-if (_UA.indexOf('applewebKit/') > -1) {browser.vendorPrefix = 'webkit';}
-if (_UA.indexOf('gecko/') > -1) {browser.vendorPrefix = 'moz';}
+if (_UA.indexOf('msie/') > -1) {browser.prefix = '-ms-';}
+if (_UA.indexOf('opera/') > -1) {browser.prefix = '-o-';}
+if (_UA.indexOf('applewebkit/') > -1) {browser.prefix = '-webkit-';}
+if (_UA.indexOf('firefox/') > -1) {browser.prefix = '-moz-';}
 
 export default browser;

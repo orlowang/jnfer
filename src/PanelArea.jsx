@@ -4,7 +4,8 @@ import Format from './utils/Format';
 export default class PanelArea extends Component {
 	static propTypes = {
 		panelTitleText: React.PropTypes.string,
-		panelType: React.PropTypes.string
+		panelType: React.PropTypes.string,
+		className: React.PropTypes.string
 	};
 	static defaultProps = {
 		panelTitleText: 'Panel',
@@ -31,7 +32,7 @@ export default class PanelArea extends Component {
 		};
 
 		return (
-			<div {...this.props} className={`panelArea ${this.props.panelType}`} style={Object.assign(styles.panelArea, Format.NoUserSelect)}>
+			<div {...this.props} className={`panelArea ${this.props.panelType} ${this.props.className}`} style={Object.assign(styles.panelArea, Format.NoUserSelect)}>
 				<div className="pA-title" style={styles.pATitle}>
 					<span className="pA-t-text" style={styles.pATText}>{this.props.panelTitleText}</span>
 				</div>

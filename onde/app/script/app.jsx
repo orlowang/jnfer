@@ -13,32 +13,6 @@ var USERSET = {
 	ieDoc: ['meta', 'http-equiv::X-UA-Compatible', 'content::IE=edge']
 };
 
-function rednerHead(arg) {
-	let ARG = arg || {};
-	let _HEAD = document.head;
-	let _TITLE = document.createElement('title');
-	let _CHARSET = document.createElement('meta');
-	let _IEMODEL = document.createElement('meta');
-	let _INITCSS = document.createElement('style');
-
-	_TITLE.innerText = ARG.title;
-
-	_CHARSET.setAttribute('charset', 'utf-8');
-
-	_IEMODEL.setAttribute('http-equiv', 'X-UA-Compatible');
-	_IEMODEL.setAttribute('content', 'IE=edge');
-
-	_INITCSS.setAttribute('type', 'text/css');
-	_INITCSS.innerText = ResetStyle + UserCSS;
-
-	_HEAD.appendChild(_TITLE);
-	_HEAD.appendChild(_CHARSET);
-	_HEAD.appendChild(_IEMODEL);
-	_HEAD.appendChild(_INITCSS);
-
-	ResourceLoader.link(USERSET.css);
-};
-
 let Body = React.createClass({
 	render(){
 		let styles = {
