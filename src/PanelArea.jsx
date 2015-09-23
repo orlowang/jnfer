@@ -9,7 +9,8 @@ export default class PanelArea extends Component {
 	};
 	static defaultProps = {
 		panelTitleText: 'Panel',
-		panelType: 'single'
+		panelType: 'single',
+		className: ''
 	};
 
 	render(){
@@ -31,8 +32,11 @@ export default class PanelArea extends Component {
 			pAContainer: {}
 		};
 
+		let _classname = `panelArea ${this.props.panelType}`;
+		if (this.props.className) { _classname = `${_classname} ${this.props.className}`; }
+
 		return (
-			<div {...this.props} className={`panelArea ${this.props.panelType} ${this.props.className}`} style={Object.assign(styles.panelArea, Format.NoUserSelect)}>
+			<div {...this.props} className={_classname} style={Object.assign(styles.panelArea, Format.NoUserSelect)}>
 				<div className="pA-title" style={styles.pATitle}>
 					<span className="pA-t-text" style={styles.pATText}>{this.props.panelTitleText}</span>
 				</div>
